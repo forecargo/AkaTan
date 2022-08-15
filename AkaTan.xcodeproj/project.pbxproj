@@ -1,0 +1,673 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		965867F928A7E3AA003BB835 /* AkaTanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965867F828A7E3AA003BB835 /* AkaTanApp.swift */; };
+		965867FB28A7E3AA003BB835 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965867FA28A7E3AA003BB835 /* ContentView.swift */; };
+		965867FD28A7E3AA003BB835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 965867FC28A7E3AA003BB835 /* Assets.xcassets */; };
+		9658680028A7E3AA003BB835 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 965867FF28A7E3AA003BB835 /* Preview Assets.xcassets */; };
+		9658680228A7E3AA003BB835 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658680128A7E3AA003BB835 /* Persistence.swift */; };
+		9658680528A7E3AA003BB835 /* AkaTan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9658680328A7E3AA003BB835 /* AkaTan.xcdatamodeld */; };
+		9658680F28A7E3AB003BB835 /* AkaTanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658680E28A7E3AB003BB835 /* AkaTanTests.swift */; };
+		9658681928A7E3AB003BB835 /* AkaTanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658681828A7E3AB003BB835 /* AkaTanUITests.swift */; };
+		9658681B28A7E3AB003BB835 /* AkaTanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658681A28A7E3AB003BB835 /* AkaTanUITestsLaunchTests.swift */; };
+		9658682928A7E5FF003BB835 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658682828A7E5FF003BB835 /* SampleData.swift */; };
+		965A6AF128A87EC3009F7322 /* FlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A6AF028A87EC3009F7322 /* FlipView.swift */; };
+		965A6AF328A87F28009F7322 /* WordCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A6AF228A87F28009F7322 /* WordCardView.swift */; };
+		965A6AF528A885B3009F7322 /* wordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A6AF428A885B3009F7322 /* wordExtension.swift */; };
+		965A6AF728A88815009F7322 /* WordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A6AF628A88815009F7322 /* WordListView.swift */; };
+		965A6AF928A8A636009F7322 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A6AF828A8A636009F7322 /* SettingView.swift */; };
+		9685A88928AA1C3B00A4FE0C /* words1.json in Resources */ = {isa = PBXBuildFile; fileRef = 9685A88628AA1C3B00A4FE0C /* words1.json */; };
+		9685A88A28AA1C3B00A4FE0C /* words3.json in Resources */ = {isa = PBXBuildFile; fileRef = 9685A88728AA1C3B00A4FE0C /* words3.json */; };
+		9685A88B28AA1C3B00A4FE0C /* words2.json in Resources */ = {isa = PBXBuildFile; fileRef = 9685A88828AA1C3B00A4FE0C /* words2.json */; };
+		969885CB28A9D8A900C02784 /* StageTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969885CA28A9D8A900C02784 /* StageTabView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9658680B28A7E3AB003BB835 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 965867ED28A7E3AA003BB835 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 965867F428A7E3AA003BB835;
+			remoteInfo = AkaTan;
+		};
+		9658681528A7E3AB003BB835 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 965867ED28A7E3AA003BB835 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 965867F428A7E3AA003BB835;
+			remoteInfo = AkaTan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		965867F528A7E3AA003BB835 /* AkaTan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AkaTan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		965867F828A7E3AA003BB835 /* AkaTanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkaTanApp.swift; sourceTree = "<group>"; };
+		965867FA28A7E3AA003BB835 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		965867FC28A7E3AA003BB835 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		965867FF28A7E3AA003BB835 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9658680128A7E3AA003BB835 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		9658680428A7E3AA003BB835 /* AkaTan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AkaTan.xcdatamodel; sourceTree = "<group>"; };
+		9658680A28A7E3AB003BB835 /* AkaTanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AkaTanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9658680E28A7E3AB003BB835 /* AkaTanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkaTanTests.swift; sourceTree = "<group>"; };
+		9658681428A7E3AB003BB835 /* AkaTanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AkaTanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9658681828A7E3AB003BB835 /* AkaTanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkaTanUITests.swift; sourceTree = "<group>"; };
+		9658681A28A7E3AB003BB835 /* AkaTanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkaTanUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9658682828A7E5FF003BB835 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		965A6AF028A87EC3009F7322 /* FlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipView.swift; sourceTree = "<group>"; };
+		965A6AF228A87F28009F7322 /* WordCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCardView.swift; sourceTree = "<group>"; };
+		965A6AF428A885B3009F7322 /* wordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordExtension.swift; sourceTree = "<group>"; };
+		965A6AF628A88815009F7322 /* WordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListView.swift; sourceTree = "<group>"; };
+		965A6AF828A8A636009F7322 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		9685A88628AA1C3B00A4FE0C /* words1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words1.json; sourceTree = "<group>"; };
+		9685A88728AA1C3B00A4FE0C /* words3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words3.json; sourceTree = "<group>"; };
+		9685A88828AA1C3B00A4FE0C /* words2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words2.json; sourceTree = "<group>"; };
+		969885CA28A9D8A900C02784 /* StageTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageTabView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		965867F228A7E3AA003BB835 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9658680728A7E3AB003BB835 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9658681128A7E3AB003BB835 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		965867EC28A7E3AA003BB835 = {
+			isa = PBXGroup;
+			children = (
+				965867F728A7E3AA003BB835 /* AkaTan */,
+				9658680D28A7E3AB003BB835 /* AkaTanTests */,
+				9658681728A7E3AB003BB835 /* AkaTanUITests */,
+				965867F628A7E3AA003BB835 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		965867F628A7E3AA003BB835 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				965867F528A7E3AA003BB835 /* AkaTan.app */,
+				9658680A28A7E3AB003BB835 /* AkaTanTests.xctest */,
+				9658681428A7E3AB003BB835 /* AkaTanUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		965867F728A7E3AA003BB835 /* AkaTan */ = {
+			isa = PBXGroup;
+			children = (
+				969885C928A9D81100C02784 /* Foundation */,
+				965A6AEF28A87EAA009F7322 /* View */,
+				9658682728A7E5D8003BB835 /* forDevelop */,
+				965867FC28A7E3AA003BB835 /* Assets.xcassets */,
+				9658680328A7E3AA003BB835 /* AkaTan.xcdatamodeld */,
+				965867FE28A7E3AA003BB835 /* Preview Content */,
+			);
+			path = AkaTan;
+			sourceTree = "<group>";
+		};
+		965867FE28A7E3AA003BB835 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				965867FF28A7E3AA003BB835 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9658680D28A7E3AB003BB835 /* AkaTanTests */ = {
+			isa = PBXGroup;
+			children = (
+				9658680E28A7E3AB003BB835 /* AkaTanTests.swift */,
+			);
+			path = AkaTanTests;
+			sourceTree = "<group>";
+		};
+		9658681728A7E3AB003BB835 /* AkaTanUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9658681828A7E3AB003BB835 /* AkaTanUITests.swift */,
+				9658681A28A7E3AB003BB835 /* AkaTanUITestsLaunchTests.swift */,
+			);
+			path = AkaTanUITests;
+			sourceTree = "<group>";
+		};
+		9658682728A7E5D8003BB835 /* forDevelop */ = {
+			isa = PBXGroup;
+			children = (
+				9685A88628AA1C3B00A4FE0C /* words1.json */,
+				9685A88828AA1C3B00A4FE0C /* words2.json */,
+				9685A88728AA1C3B00A4FE0C /* words3.json */,
+				9658682828A7E5FF003BB835 /* SampleData.swift */,
+				965A6AF428A885B3009F7322 /* wordExtension.swift */,
+			);
+			path = forDevelop;
+			sourceTree = "<group>";
+		};
+		965A6AEF28A87EAA009F7322 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				965867FA28A7E3AA003BB835 /* ContentView.swift */,
+				969885CA28A9D8A900C02784 /* StageTabView.swift */,
+				965A6AF628A88815009F7322 /* WordListView.swift */,
+				965A6AF228A87F28009F7322 /* WordCardView.swift */,
+				965A6AF028A87EC3009F7322 /* FlipView.swift */,
+				965A6AF828A8A636009F7322 /* SettingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		969885C928A9D81100C02784 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				965867F828A7E3AA003BB835 /* AkaTanApp.swift */,
+				9658680128A7E3AA003BB835 /* Persistence.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		965867F428A7E3AA003BB835 /* AkaTan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9658681E28A7E3AB003BB835 /* Build configuration list for PBXNativeTarget "AkaTan" */;
+			buildPhases = (
+				965867F128A7E3AA003BB835 /* Sources */,
+				965867F228A7E3AA003BB835 /* Frameworks */,
+				965867F328A7E3AA003BB835 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AkaTan;
+			productName = AkaTan;
+			productReference = 965867F528A7E3AA003BB835 /* AkaTan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9658680928A7E3AB003BB835 /* AkaTanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9658682128A7E3AB003BB835 /* Build configuration list for PBXNativeTarget "AkaTanTests" */;
+			buildPhases = (
+				9658680628A7E3AB003BB835 /* Sources */,
+				9658680728A7E3AB003BB835 /* Frameworks */,
+				9658680828A7E3AB003BB835 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9658680C28A7E3AB003BB835 /* PBXTargetDependency */,
+			);
+			name = AkaTanTests;
+			productName = AkaTanTests;
+			productReference = 9658680A28A7E3AB003BB835 /* AkaTanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9658681328A7E3AB003BB835 /* AkaTanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9658682428A7E3AB003BB835 /* Build configuration list for PBXNativeTarget "AkaTanUITests" */;
+			buildPhases = (
+				9658681028A7E3AB003BB835 /* Sources */,
+				9658681128A7E3AB003BB835 /* Frameworks */,
+				9658681228A7E3AB003BB835 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9658681628A7E3AB003BB835 /* PBXTargetDependency */,
+			);
+			name = AkaTanUITests;
+			productName = AkaTanUITests;
+			productReference = 9658681428A7E3AB003BB835 /* AkaTanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		965867ED28A7E3AA003BB835 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					965867F428A7E3AA003BB835 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					9658680928A7E3AB003BB835 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 965867F428A7E3AA003BB835;
+					};
+					9658681328A7E3AB003BB835 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 965867F428A7E3AA003BB835;
+					};
+				};
+			};
+			buildConfigurationList = 965867F028A7E3AA003BB835 /* Build configuration list for PBXProject "AkaTan" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 965867EC28A7E3AA003BB835;
+			productRefGroup = 965867F628A7E3AA003BB835 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				965867F428A7E3AA003BB835 /* AkaTan */,
+				9658680928A7E3AB003BB835 /* AkaTanTests */,
+				9658681328A7E3AB003BB835 /* AkaTanUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		965867F328A7E3AA003BB835 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9658680028A7E3AA003BB835 /* Preview Assets.xcassets in Resources */,
+				9685A88A28AA1C3B00A4FE0C /* words3.json in Resources */,
+				9685A88B28AA1C3B00A4FE0C /* words2.json in Resources */,
+				9685A88928AA1C3B00A4FE0C /* words1.json in Resources */,
+				965867FD28A7E3AA003BB835 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9658680828A7E3AB003BB835 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9658681228A7E3AB003BB835 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		965867F128A7E3AA003BB835 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9658680228A7E3AA003BB835 /* Persistence.swift in Sources */,
+				965A6AF128A87EC3009F7322 /* FlipView.swift in Sources */,
+				969885CB28A9D8A900C02784 /* StageTabView.swift in Sources */,
+				965A6AF528A885B3009F7322 /* wordExtension.swift in Sources */,
+				965867FB28A7E3AA003BB835 /* ContentView.swift in Sources */,
+				965867F928A7E3AA003BB835 /* AkaTanApp.swift in Sources */,
+				965A6AF728A88815009F7322 /* WordListView.swift in Sources */,
+				9658682928A7E5FF003BB835 /* SampleData.swift in Sources */,
+				965A6AF328A87F28009F7322 /* WordCardView.swift in Sources */,
+				9658680528A7E3AA003BB835 /* AkaTan.xcdatamodeld in Sources */,
+				965A6AF928A8A636009F7322 /* SettingView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9658680628A7E3AB003BB835 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9658680F28A7E3AB003BB835 /* AkaTanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9658681028A7E3AB003BB835 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9658681B28A7E3AB003BB835 /* AkaTanUITestsLaunchTests.swift in Sources */,
+				9658681928A7E3AB003BB835 /* AkaTanUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9658680C28A7E3AB003BB835 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 965867F428A7E3AA003BB835 /* AkaTan */;
+			targetProxy = 9658680B28A7E3AB003BB835 /* PBXContainerItemProxy */;
+		};
+		9658681628A7E3AB003BB835 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 965867F428A7E3AA003BB835 /* AkaTan */;
+			targetProxy = 9658681528A7E3AB003BB835 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9658681C28A7E3AB003BB835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9658681D28A7E3AB003BB835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9658681F28A7E3AB003BB835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AkaTan/Preview Content\"";
+				DEVELOPMENT_TEAM = B65MQ3UH52;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoshinoji.AkaTan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9658682028A7E3AB003BB835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AkaTan/Preview Content\"";
+				DEVELOPMENT_TEAM = B65MQ3UH52;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoshinoji.AkaTan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9658682228A7E3AB003BB835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B65MQ3UH52;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoshinoji.AkaTanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AkaTan.app/AkaTan";
+			};
+			name = Debug;
+		};
+		9658682328A7E3AB003BB835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B65MQ3UH52;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoshinoji.AkaTanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AkaTan.app/AkaTan";
+			};
+			name = Release;
+		};
+		9658682528A7E3AB003BB835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B65MQ3UH52;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoshinoji.AkaTanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AkaTan;
+			};
+			name = Debug;
+		};
+		9658682628A7E3AB003BB835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B65MQ3UH52;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoshinoji.AkaTanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AkaTan;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		965867F028A7E3AA003BB835 /* Build configuration list for PBXProject "AkaTan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9658681C28A7E3AB003BB835 /* Debug */,
+				9658681D28A7E3AB003BB835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9658681E28A7E3AB003BB835 /* Build configuration list for PBXNativeTarget "AkaTan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9658681F28A7E3AB003BB835 /* Debug */,
+				9658682028A7E3AB003BB835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9658682128A7E3AB003BB835 /* Build configuration list for PBXNativeTarget "AkaTanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9658682228A7E3AB003BB835 /* Debug */,
+				9658682328A7E3AB003BB835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9658682428A7E3AB003BB835 /* Build configuration list for PBXNativeTarget "AkaTanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9658682528A7E3AB003BB835 /* Debug */,
+				9658682628A7E3AB003BB835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9658680328A7E3AA003BB835 /* AkaTan.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9658680428A7E3AA003BB835 /* AkaTan.xcdatamodel */,
+			);
+			currentVersion = 9658680428A7E3AA003BB835 /* AkaTan.xcdatamodel */;
+			path = AkaTan.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 965867ED28A7E3AA003BB835 /* Project object */;
+}
