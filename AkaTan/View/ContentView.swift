@@ -51,6 +51,14 @@ struct ContentView: View {
                     }
             }
         }
+        .onAppear {
+            // 登録単語数が０の場合はデータをロードする。
+            if words.count == 0 {
+                registSampleData(context: viewContext, fileName: "words1")
+                registSampleData(context: viewContext, fileName: "words2")
+                registSampleData(context: viewContext, fileName: "words3")
+            }
+        }
     }
 
     private func parseText(_ text: String?) -> some View {

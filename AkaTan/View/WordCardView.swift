@@ -13,12 +13,19 @@ import SwiftUI
 // 覚えの悪い単語ほど出現確率が上がる。
 // 間違った日（間違ったボタンを押した日）がカレンダーで分かる
 // 詳しいことを調べるときには外部サイトに飛ばすことができる
+// 0.2.0に向けた目標
+// ・スプラッシュスクリーン
+// ・ダークモードへの対応
+// ・横向き画面への対応
+// 0.3.0に向けた対応
+// ・単語の登録・削除機能の追加（これでゼロ件でも申請できる？）
 
 struct WordCardView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
     var words: FetchRequest<Word>
+    var modeOfEnJp: ModeOfEnJp
     
     @State var isFront: Bool
     
@@ -30,6 +37,7 @@ struct WordCardView: View {
             animation: .default
         )
         _isFront = State(initialValue: defautSide ? true : false)
+        modeOfEnJp = defautSide ? .enToJp : .jpToEn
         print(defautSide)
     }
     
@@ -44,16 +52,19 @@ struct WordCardView: View {
                     BackCard()
                 })
         }.onTapGesture {
-            withAnimation(.easeInOut(duration: 1)) {
-                if isFront {
-                    words.wrappedValue.first!.en_tapped = words.wrappedValue.first!.en_tapped + 1
-                } else {
-                    words.wrappedValue.first!.jp_tapped = words.wrappedValue.first!.jp_tapped + 1
-                }
-                words.wrappedValue.first!.tapped = words.wrappedValue.first!.tapped + 1
-                try? viewContext.save()
-                isFront.toggle()
+            //withAnimation(.easeInOut(duration: 1)) {
+            if isFront {
+                words.wrappedValue.first!.en_tapped = words.wrappedValue.first!.en_tapped + 1
+            } else {
+                words.wrappedValue.first!.jp_tapped = words.wrappedValue.first!.jp_tapped + 1
             }
+            words.wrappedValue.first!.tapped = words.wrappedValue.first!.tapped + 1
+            try? viewContext.save()
+            isFront.toggle()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                isFront = modeOfEnJp == .enToJp ? true : false
+            }
+            //}
         }
     }
     

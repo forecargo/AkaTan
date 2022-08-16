@@ -15,7 +15,7 @@ struct Flip<Front: View, Back: View>: View {
     let back: () -> Back
     
     init(isFront: Bool,
-         duration: Double = 1.0,
+         duration: Double = 0.5,
          @ViewBuilder front: @escaping () -> Front,
          @ViewBuilder back: @escaping () -> Back) {
         self.isFront = isFront
@@ -41,13 +41,12 @@ struct Flip<Front: View, Back: View>: View {
                 self.canShowFrontView = value
             }
         })
+        .animation(nil)
         .rotation3DEffect(
             isFront ? Angle(degrees: 0): Angle(degrees: 180),
             axis: (x: CGFloat(0), y: CGFloat(10), z: CGFloat(0))
         )
-        //.animation(.linear(duration: duration))
-        //.animation(.easeInOut(duration: duration))
-        //.animation(nil)
+        .animation(.easeInOut(duration: duration))
     }
 }
 
