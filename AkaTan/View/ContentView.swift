@@ -50,6 +50,12 @@ struct ContentView: View {
                         }
                     }
             }
+            /*
+            AdMobBannerView()
+                .frame(width: AdMobBannerView.adsBannerSize.width,
+                       height:AdMobBannerView.adsBannerSize.height,
+                       alignment: .center)
+             */
         }
         .onAppear {
             // 登録単語数が０の場合はデータをロードする。

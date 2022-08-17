@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		960783F028AC8F9200CFB015 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960783EF28AC8F9200CFB015 /* BannerAd.swift */; };
+		960783F328AC901F00CFB015 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 960783F228AC901F00CFB015 /* GoogleMobileAds */; };
 		965867F928A7E3AA003BB835 /* AkaTanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965867F828A7E3AA003BB835 /* AkaTanApp.swift */; };
 		965867FB28A7E3AA003BB835 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965867FA28A7E3AA003BB835 /* ContentView.swift */; };
 		965867FD28A7E3AA003BB835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 965867FC28A7E3AA003BB835 /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		960783EF28AC8F9200CFB015 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
+		960783F428AC91A700CFB015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		965867F528A7E3AA003BB835 /* AkaTan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AkaTan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		965867F828A7E3AA003BB835 /* AkaTanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkaTanApp.swift; sourceTree = "<group>"; };
 		965867FA28A7E3AA003BB835 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				960783F328AC901F00CFB015 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +123,7 @@
 		965867F728A7E3AA003BB835 /* AkaTan */ = {
 			isa = PBXGroup;
 			children = (
+				960783F428AC91A700CFB015 /* Info.plist */,
 				969885C928A9D81100C02784 /* Foundation */,
 				965A6AEF28A87EAA009F7322 /* View */,
 				9658682728A7E5D8003BB835 /* forDevelop */,
@@ -174,6 +180,7 @@
 				965A6AF228A87F28009F7322 /* WordCardView.swift */,
 				965A6AF028A87EC3009F7322 /* FlipView.swift */,
 				965A6AF828A8A636009F7322 /* SettingView.swift */,
+				960783EF28AC8F9200CFB015 /* BannerAd.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +210,9 @@
 			dependencies = (
 			);
 			name = AkaTan;
+			packageProductDependencies = (
+				960783F228AC901F00CFB015 /* GoogleMobileAds */,
+			);
 			productName = AkaTan;
 			productReference = 965867F528A7E3AA003BB835 /* AkaTan.app */;
 			productType = "com.apple.product-type.application";
@@ -275,6 +285,9 @@
 				Base,
 			);
 			mainGroup = 965867EC28A7E3AA003BB835;
+			packageReferences = (
+				960783F128AC901F00CFB015 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = 965867F628A7E3AA003BB835 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -324,6 +337,7 @@
 				965A6AF128A87EC3009F7322 /* FlipView.swift in Sources */,
 				969885CB28A9D8A900C02784 /* StageTabView.swift in Sources */,
 				965A6AF528A885B3009F7322 /* wordExtension.swift in Sources */,
+				960783F028AC8F9200CFB015 /* BannerAd.swift in Sources */,
 				965867FB28A7E3AA003BB835 /* ContentView.swift in Sources */,
 				965867F928A7E3AA003BB835 /* AkaTanApp.swift in Sources */,
 				965A6AF728A88815009F7322 /* WordListView.swift in Sources */,
@@ -492,6 +506,7 @@
 				DEVELOPMENT_TEAM = B65MQ3UH52;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AkaTan/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -521,6 +536,7 @@
 				DEVELOPMENT_TEAM = B65MQ3UH52;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AkaTan/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -655,6 +671,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		960783F128AC901F00CFB015 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		960783F228AC901F00CFB015 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 960783F128AC901F00CFB015 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9658680328A7E3AA003BB835 /* AkaTan.xcdatamodeld */ = {
