@@ -28,6 +28,7 @@ struct WordCardView: View {
     var modeOfEnJp: ModeOfEnJp
     
     @State var isFront: Bool
+    @State var isShowingEditPage: Bool = false
     
     init(sidOfWord sid: String, defautSide: Bool) {
         words = FetchRequest<Word>(
@@ -43,16 +44,15 @@ struct WordCardView: View {
     
     var body: some View {
         VStack {
-            Flip(
-                isFront: isFront,
-                front: {
-                    FrontCard()
-                },
-                back: {
-                    BackCard()
-                })
-        }.onTapGesture {
-            //withAnimation(.easeInOut(duration: 1)) {
+            // Flip(isFront: isFront, front: { FrontCard() }, back: { BackCard() })
+            NewFlipView(isFront, front: {FrontCard()}, back: {BackCard()})
+        }
+        .padding([.top, .bottom] , -15)
+        .sheet(isPresented: $isShowingEditPage) {
+            EditView(editingWord: words.wrappedValue.first!)
+        }
+        .onTapGesture {
+            // タップ数をインクリメント
             if isFront {
                 words.wrappedValue.first!.en_tapped = words.wrappedValue.first!.en_tapped + 1
             } else {
@@ -60,11 +60,15 @@ struct WordCardView: View {
             }
             words.wrappedValue.first!.tapped = words.wrappedValue.first!.tapped + 1
             try? viewContext.save()
+            // カードを裏返した後、５秒後に元に戻す。
             isFront.toggle()
             DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                 isFront = modeOfEnJp == .enToJp ? true : false
             }
-            //}
+        }
+        .onLongPressGesture {
+            // 編集
+            isShowingEditPage.toggle()
         }
     }
     
@@ -85,65 +89,74 @@ struct WordCardView: View {
     
     private func Card(_ mode: mode) -> some View {
         ZStack {
-            let cardWidth = CGFloat(300)
-            let cardHeight = CGFloat(150)
-            
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(.white)
-                    .frame(width: cardWidth - CGFloat(10), height: cardHeight)
+            GeometryReader { geometry in
+                let cardWidth = geometry.size.width
+                let cardHeight = CGFloat(150)
                 
-                Rectangle()
-                    .fill(
-                        LinearGradient(
-                            gradient: Gradient(
-                                colors: [
-                                    mode == .en ? .red : .blue,
-                                    mode == .en ? .orange : .purple
-                                ]),
-                            startPoint: .leading,
-                            endPoint: .trailing
+                ZStack {
+                    // 1番下の白い板
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(.white)
+                        .frame(width: cardWidth, height: cardHeight)
+                    
+                    // 上のバー
+                    Rectangle()
+                        .fill(
+                            LinearGradient(
+                                gradient: Gradient(
+                                    colors: [
+                                        mode == .en ? .red : .blue,
+                                        mode == .en ? .orange : .purple
+                                    ]),
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
                         )
-                    )
-                    .frame(width: cardWidth - CGFloat(10), height: 20)
-                    .offset(y: -1 * cardHeight / 2 + 10)
-            }
-            .clipShape(RoundedRectangle(cornerRadius: 10))
-            .shadow(radius: 10)
-            .padding()
-            
-            // 英語・日本語
-            Text(mode == .en ? "\(words.wrappedValue.first!.english!)" : words.wrappedValue.first!.japanese!)
-                .frame(width: cardWidth - 10)
-                .font(.system(size: 18, design: .rounded))
-                .offset(y: 5)
-            
-            // SID
-            Text("\(words.wrappedValue.first!.sid!)")
-                .font(.caption)
-                .foregroundColor(.gray)
-                .offset(x: -120, y: -45)
-            
-            // Info
-            /*
-            Text("\(words.wrappedValue.first!.en_tapped), \(words.wrappedValue.first!.jp_tapped), \(words.wrappedValue.first!.favorite ? "True" : "False") \(words.wrappedValue.first!.stage!)")
-                .font(.caption)
-                .foregroundColor(.gray)
-                .offset(x: -120, y: 70)
-            */
-            // お気に入りアイコン
-            Image(systemName: words.wrappedValue.first!.favorite ? "bookmark.fill" : "bookmark")
-                .font(.title)
-                .foregroundColor(words.wrappedValue.first!.favorite ? .yellow : .yellow.opacity(0.7))
-                .offset(x: 120, y: -70)
-                .onTapGesture {
-                    withAnimation(.easeInOut) {
-                        words.wrappedValue.first!.favorite.toggle()
-                        try! viewContext.save()
-                    }
-                    print(words.wrappedValue.first!.favorite)
+                        .frame(width: cardWidth, height: 20)
+                        .offset(y: -1 * cardHeight / 2 + 10)
                 }
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .shadow(radius: 10)
+                .padding(0)
+                
+                // 英語・日本語
+                Text(mode == .en ? "\(words.wrappedValue.first!.english!)" : words.wrappedValue.first!.japanese!)
+                    .frame(width: cardWidth - 10, height: cardHeight)
+                    .foregroundColor(.black)
+                    .font(.system(size: 18, design: .rounded))
+                    .offset(y: 5)
+                
+                // SID
+                Text("\(words.wrappedValue.first!.sid!)")
+                    .frame(width: cardWidth - 10, height: cardHeight, alignment: .leading)
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                    .offset(x: 10, y: -1 * cardHeight / 2 + 30)
+                
+                // Info
+                /*
+                 Text("\(words.wrappedValue.first!.en_tapped), \(words.wrappedValue.first!.jp_tapped), \(words.wrappedValue.first!.favorite ? "True" : "False") \(words.wrappedValue.first!.stage!)")
+                 .font(.caption)
+                 .foregroundColor(.gray)
+                 .offset(x: -120, y: 70)
+                 */
+                // お気に入りアイコン
+                Image(systemName: words.wrappedValue.first!.favorite ? "bookmark.fill" : "bookmark")
+                    .frame(width: cardWidth - 10, height: cardHeight, alignment: .trailing)
+                    .font(.title)
+                    .foregroundColor(words.wrappedValue.first!.favorite ? .yellow : .yellow.opacity(0.7))
+                    .offset(x: 0, y: -1 * cardHeight / 2)
+                    .onTapGesture {
+                        withAnimation(.easeInOut) {
+                            words.wrappedValue.first!.favorite.toggle()
+                            try! viewContext.save()
+                        }
+                        print(words.wrappedValue.first!.favorite)
+                    }
+            } // geometry
         }
+        .frame(height: CGFloat(170))
+        
     }
 }
 
@@ -152,7 +165,7 @@ struct WordCardView_Previews: PreviewProvider {
     
     static var previews: some View {
         let ctx = PersistenceController.preview.container.viewContext
-        var word = Word.create(english: "follow her advice 2", japanese: "彼女の助言に従う", sid: "00001", inContext: ctx)
+        var word = Word.create(english: "follow her advice. shirokumakun wo tabete iiyo.", japanese: "彼女の助言に従う", sid: "00001", inContext: ctx)
         WordCardView(sidOfWord: "00001", defautSide: true)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
