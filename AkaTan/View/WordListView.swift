@@ -10,6 +10,7 @@ import SwiftUI
 struct WordListView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
+    let generator = UINotificationFeedbackGenerator()
     
     private var mode: ModeOfEnJp
     @State private var modeOfFiltered: Bool = false
@@ -31,7 +32,7 @@ struct WordListView: View {
     
     @State private var searchText = ""
     // TabView用
-    let stages: [String] = ["すべて", "Stage1", "Stage2", "Stage3", "Stage4", "Stage5"]
+    @State private var substages: [String] = ["すべて"]
     @State private var selectedStage = 0
     
     var body: some View {
@@ -54,6 +55,7 @@ struct WordListView: View {
                         .navigationBarItems(
                             leading: Button(action: {
                                 withAnimation(.easeInOut) {
+                                    self.generator.notificationOccurred(.success)
                                     self.modeOfFiltered.toggle()
                                     filterExec()
                                 }
@@ -75,7 +77,7 @@ struct WordListView: View {
                     
                 } // scrollview
             }
-            .padding(.bottom, -10)
+            .padding(.bottom, -8)
             .searchable(
                 text: $searchText,
                 placement: .automatic,
@@ -88,13 +90,13 @@ struct WordListView: View {
                 filterExec()
             }
             
-            // TabView
+            // サブステージ（見出し）
             ScrollView(.horizontal, showsIndicators: false) {
                 ScrollViewReader { proxy in
                     HStack {
                         Spacer()
-                        ForEach(0..<self.stages.count) { num in
-                            Text("\(stages[num])")
+                        ForEach(Array(substages.enumerated()), id:\.offset) { num, substage in
+                            Text("\(substage)")
                                 .font(.headline)
                                 .padding(.init(top: 4, leading: 4, bottom: 4, trailing: 4))
                                 .decorate(isSelected: num == selectedStage)
@@ -121,20 +123,25 @@ struct WordListView: View {
                 LinearGradient(
                     gradient: Gradient(
                         colors: [
-                            mode == .enToJp ? .red : .blue,
-                            mode == .enToJp ? .orange : .purple
+                            mode == .enToJp ? .orange : .blue,
+                            mode == .enToJp ? .red : .purple
                         ]),
                     startPoint: .leading,
                     endPoint: .trailing
                 ).opacity(0.5)
             )
+            .onAppear {
+                self.substages.append(contentsOf: self.getSubStages())
+            }
+            
         }
+        
     }
     
     //
     func filterExec() {
         // CoreData対応
-        let stagePredicate: NSPredicate = NSPredicate(format: "stage contains %@", stages[selectedStage])   // ステージフィルタ
+        let stagePredicate: NSPredicate = NSPredicate(format: "substage contains %@", substages[selectedStage])   // ステージフィルタ
         let bookmarkPredicate: NSPredicate = NSPredicate(format: "favorite == %@", NSNumber(true))          // ブックマークフィルタ
         let englishPredicate: NSPredicate = NSPredicate(format: "english contains %@ OR japanese contains %@", self.searchText, self.searchText)     // キーワードフィルタ
         
@@ -159,6 +166,16 @@ struct WordListView: View {
         
         // 検索
         words.nsPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+    }
+    
+    func getSubStages() -> [String] {
+        var substages: [String] = []
+        for word in self.words {
+            if substages.firstIndex(of: word.substage!) == nil {
+                substages.append(word.substage!)
+            }
+        }
+        return substages.sorted()
     }
 }
 

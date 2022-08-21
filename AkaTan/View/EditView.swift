@@ -79,7 +79,7 @@ struct EditView: View {
 struct EditView_Previews: PreviewProvider {
     static var previews: some View {
         let ctx = PersistenceController.preview.container.viewContext
-        var word = Word.create(english: "follow her advice. shirokumakun wo tabete iiyo.", japanese: "彼女の助言に従う", sid: "00001", inContext: ctx)
+        let word = Word.create(english: "follow her advice. shirokumakun wo tabete iiyo.", japanese: "彼女の助言に従う", sid: "00001", inContext: ctx)
         EditView(editingWord: word)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         

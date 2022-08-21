@@ -23,6 +23,7 @@ import SwiftUI
 struct WordCardView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
+    let generator = UINotificationFeedbackGenerator()
     
     var words: FetchRequest<Word>
     var modeOfEnJp: ModeOfEnJp
@@ -62,12 +63,13 @@ struct WordCardView: View {
             try? viewContext.save()
             // カードを裏返した後、５秒後に元に戻す。
             isFront.toggle()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-                isFront = modeOfEnJp == .enToJp ? true : false
-            }
+            let workItem = DispatchWorkItem() { isFront = modeOfEnJp == .enToJp ? true : false }
+            //workItem.cancel()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: workItem)
         }
         .onLongPressGesture {
             // 編集
+            self.generator.notificationOccurred(.warning)
             isShowingEditPage.toggle()
         }
     }
@@ -105,8 +107,8 @@ struct WordCardView: View {
                             LinearGradient(
                                 gradient: Gradient(
                                     colors: [
-                                        mode == .en ? .red : .blue,
-                                        mode == .en ? .orange : .purple
+                                        mode == .en ? .orange : .blue,
+                                        mode == .en ? .red : .purple
                                     ]),
                                 startPoint: .leading,
                                 endPoint: .trailing
@@ -116,19 +118,19 @@ struct WordCardView: View {
                         .offset(y: -1 * cardHeight / 2 + 10)
                 }
                 .clipShape(RoundedRectangle(cornerRadius: 10))
-                .shadow(radius: 10)
+                .shadow(radius: 3, x: 10, y: 10)
                 .padding(0)
                 
                 // 英語・日本語
                 Text(mode == .en ? "\(words.wrappedValue.first!.english!)" : words.wrappedValue.first!.japanese!)
-                    .frame(width: cardWidth - 10, height: cardHeight)
+                    .frame(width: abs(cardWidth - 10), height: abs(cardHeight))
                     .foregroundColor(.black)
                     .font(.system(size: 18, design: .rounded))
                     .offset(y: 5)
                 
                 // SID
                 Text("\(words.wrappedValue.first!.sid!)")
-                    .frame(width: cardWidth - 10, height: cardHeight, alignment: .leading)
+                    .frame(width: abs(cardWidth - 10), height: abs(cardHeight), alignment: .leading)
                     .font(.caption)
                     .foregroundColor(.gray)
                     .offset(x: 10, y: -1 * cardHeight / 2 + 30)
@@ -142,15 +144,16 @@ struct WordCardView: View {
                  */
                 // お気に入りアイコン
                 Image(systemName: words.wrappedValue.first!.favorite ? "bookmark.fill" : "bookmark")
-                    .frame(width: cardWidth - 10, height: cardHeight, alignment: .trailing)
+                    .frame(width: abs(cardWidth - 10), height: abs(cardHeight), alignment: .trailing)
                     .font(.title)
                     .foregroundColor(words.wrappedValue.first!.favorite ? .yellow : .yellow.opacity(0.7))
                     .offset(x: 0, y: -1 * cardHeight / 2)
                     .onTapGesture {
-                        withAnimation(.easeInOut) {
+                        withAnimation(.easeInOut(duration: 0.5)) {
                             words.wrappedValue.first!.favorite.toggle()
                             try! viewContext.save()
                         }
+                        self.generator.notificationOccurred(.success)
                         print(words.wrappedValue.first!.favorite)
                     }
             } // geometry
@@ -165,7 +168,7 @@ struct WordCardView_Previews: PreviewProvider {
     
     static var previews: some View {
         let ctx = PersistenceController.preview.container.viewContext
-        var word = Word.create(english: "follow her advice. shirokumakun wo tabete iiyo.", japanese: "彼女の助言に従う", sid: "00001", inContext: ctx)
+        let _ = Word.create(english: "follow her advice. shirokumakun wo tabete iiyo.", japanese: "彼女の助言に従う", sid: "00001", inContext: ctx)
         WordCardView(sidOfWord: "00001", defautSide: true)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }

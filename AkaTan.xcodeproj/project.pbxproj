@@ -10,6 +10,9 @@
 		960783F028AC8F9200CFB015 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960783EF28AC8F9200CFB015 /* BannerAd.swift */; };
 		960783F328AC901F00CFB015 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 960783F228AC901F00CFB015 /* GoogleMobileAds */; };
 		961B89A428ACB2F8009BD03E /* NewFlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961B89A328ACB2F8009BD03E /* NewFlipView.swift */; };
+		962E360628AE84DA004146A2 /* words3.json in Resources */ = {isa = PBXBuildFile; fileRef = 962E360328AE84DA004146A2 /* words3.json */; };
+		962E360728AE84DA004146A2 /* words2.json in Resources */ = {isa = PBXBuildFile; fileRef = 962E360428AE84DA004146A2 /* words2.json */; };
+		962E360828AE84DA004146A2 /* words1.json in Resources */ = {isa = PBXBuildFile; fileRef = 962E360528AE84DA004146A2 /* words1.json */; };
 		963AD74A28ACEBCE0009836A /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963AD74928ACEBCE0009836A /* EditView.swift */; };
 		965867F928A7E3AA003BB835 /* AkaTanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965867F828A7E3AA003BB835 /* AkaTanApp.swift */; };
 		965867FB28A7E3AA003BB835 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965867FA28A7E3AA003BB835 /* ContentView.swift */; };
@@ -27,9 +30,6 @@
 		965A6AF728A88815009F7322 /* WordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A6AF628A88815009F7322 /* WordListView.swift */; };
 		965A6AF928A8A636009F7322 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A6AF828A8A636009F7322 /* SettingView.swift */; };
 		969885CB28A9D8A900C02784 /* StageTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969885CA28A9D8A900C02784 /* StageTabView.swift */; };
-		9698F6AC28AD07DC00C0E43C /* words3.json in Resources */ = {isa = PBXBuildFile; fileRef = 9698F6AB28AD07DC00C0E43C /* words3.json */; };
-		96CE1C6E28AD065800A6FF6E /* words2.json in Resources */ = {isa = PBXBuildFile; fileRef = 96CE1C6B28AD065800A6FF6E /* words2.json */; };
-		96CE1C6F28AD065800A6FF6E /* words1.json in Resources */ = {isa = PBXBuildFile; fileRef = 96CE1C6C28AD065800A6FF6E /* words1.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +53,9 @@
 		960783EF28AC8F9200CFB015 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
 		960783F428AC91A700CFB015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		961B89A328ACB2F8009BD03E /* NewFlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlipView.swift; sourceTree = "<group>"; };
+		962E360328AE84DA004146A2 /* words3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words3.json; sourceTree = "<group>"; };
+		962E360428AE84DA004146A2 /* words2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words2.json; sourceTree = "<group>"; };
+		962E360528AE84DA004146A2 /* words1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words1.json; sourceTree = "<group>"; };
 		963AD74928ACEBCE0009836A /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		965867F528A7E3AA003BB835 /* AkaTan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AkaTan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		965867F828A7E3AA003BB835 /* AkaTanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkaTanApp.swift; sourceTree = "<group>"; };
@@ -73,9 +76,6 @@
 		965A6AF628A88815009F7322 /* WordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListView.swift; sourceTree = "<group>"; };
 		965A6AF828A8A636009F7322 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		969885CA28A9D8A900C02784 /* StageTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageTabView.swift; sourceTree = "<group>"; };
-		9698F6AB28AD07DC00C0E43C /* words3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words3.json; sourceTree = "<group>"; };
-		96CE1C6B28AD065800A6FF6E /* words2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words2.json; sourceTree = "<group>"; };
-		96CE1C6C28AD065800A6FF6E /* words1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words1.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,9 +166,9 @@
 		9658682728A7E5D8003BB835 /* forDevelop */ = {
 			isa = PBXGroup;
 			children = (
-				96CE1C6C28AD065800A6FF6E /* words1.json */,
-				96CE1C6B28AD065800A6FF6E /* words2.json */,
-				9698F6AB28AD07DC00C0E43C /* words3.json */,
+				962E360528AE84DA004146A2 /* words1.json */,
+				962E360428AE84DA004146A2 /* words2.json */,
+				962E360328AE84DA004146A2 /* words3.json */,
 				9658682828A7E5FF003BB835 /* SampleData.swift */,
 				965A6AF428A885B3009F7322 /* wordExtension.swift */,
 			);
@@ -310,11 +310,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96CE1C6E28AD065800A6FF6E /* words2.json in Resources */,
-				9698F6AC28AD07DC00C0E43C /* words3.json in Resources */,
+				962E360728AE84DA004146A2 /* words2.json in Resources */,
 				9658680028A7E3AA003BB835 /* Preview Assets.xcassets in Resources */,
+				962E360628AE84DA004146A2 /* words3.json in Resources */,
 				965867FD28A7E3AA003BB835 /* Assets.xcassets in Resources */,
-				96CE1C6F28AD065800A6FF6E /* words1.json in Resources */,
+				962E360828AE84DA004146A2 /* words1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,7 +509,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"AkaTan/Preview Content\"";
 				DEVELOPMENT_TEAM = B65MQ3UH52;
 				ENABLE_PREVIEWS = YES;
@@ -524,7 +524,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hoshinoji.AkaTan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -539,7 +539,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"AkaTan/Preview Content\"";
 				DEVELOPMENT_TEAM = B65MQ3UH52;
 				ENABLE_PREVIEWS = YES;
@@ -554,7 +554,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hoshinoji.AkaTan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -30,7 +30,7 @@ struct StageTabView: View {
         VStack {
             // コンテンツ部分
             TabView(selection: $selectedStage) {
-                ForEach(0..<self.stages.count) { num in
+                ForEach(0..<self.stages.count, id: \.self) { num in
                     ZStack {
                         //Text("\(stages[num])")
                         WordListView(modeOfEnJp: modeOfEnJp)
@@ -45,7 +45,7 @@ struct StageTabView: View {
                 ScrollViewReader { proxy in
                     HStack {
                         Spacer()
-                        ForEach(0..<self.stages.count) { num in
+                        ForEach(0..<self.stages.count, id: \.self) { num in
                             Text("\(stages[num])")
                                 .font(.headline)
                                 .padding(.init(top: 4, leading: 4, bottom: 4, trailing: 4))
