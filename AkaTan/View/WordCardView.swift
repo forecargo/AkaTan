@@ -101,6 +101,11 @@ struct WordCardView: View {
                         .fill(.white)
                         .frame(width: cardWidth, height: cardHeight)
                     
+                    Image("01")
+                        .resizable()
+                        .frame(width: cardWidth, height: cardHeight)
+                        .opacity(0.3)
+                    
                     // 上のバー
                     Rectangle()
                         .fill(
