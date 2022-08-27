@@ -35,6 +35,7 @@ struct PersistenceController {
         
         // Wordテーブル登録
         for word in wordlist {
+            print(word.English)
             let newWord = Word(context: viewContext)
             newWord.english = word.English
             newWord.japanese = word.Japanese

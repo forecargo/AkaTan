@@ -142,7 +142,7 @@ struct WordListView: View {
     func filterExec() {
         // CoreData対応
         let stagePredicate: NSPredicate = NSPredicate(format: "substage contains %@", substages[selectedStage])   // ステージフィルタ
-        let bookmarkPredicate: NSPredicate = NSPredicate(format: "favorite == %@", NSNumber(true))          // ブックマークフィルタ
+        let bookmarkPredicate: NSPredicate = NSPredicate(format: "favorite == true") //%@",  NSNumber(true))          // ブックマークフィルタ
         let englishPredicate: NSPredicate = NSPredicate(format: "english contains[c] %@ OR japanese contains %@", self.searchText, self.searchText)     // キーワードフィルタ
         
         // 検索フィルタの組み込み
@@ -161,7 +161,6 @@ struct WordListView: View {
         // キーワードフィルタ
         if self.searchText != "" {
             predicates.append(englishPredicate)
-            //predicates.append(japanesePredicate)
         }
         
         // 検索
